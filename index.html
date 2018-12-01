@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GST Invoice Builder</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+		
+</head>
+<body>
+
+<div class="container">
+	<div class="page-header">
+		<h2>Enter invoice details</h2>   
+	</div>
+	<div class="sub-container float-left" style="width: 48%;">
+		
+		<div class="radio">
+			Invoice No. <input id="invoiceNo" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Date : <input id="dtOfIssue" class="form-control" style="display: inline; width: 400px" type="date">
+		</div>
+		<div class="radio">
+			Challan No: <input id="challanNo" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Challan Date: <input id="challanDate" class="form-control" style="display: inline; width: 400px" type="date">
+		</div>
+	</div>
+	<div class="sub-container float-left">
+		
+		<div class="radio">
+			<label><input id="originalInv" type="radio" name="invoiceVersion" value="Original" checked >Original</label>
+			<label><input id="duplicateInv" type="radio" name="invoiceVersion" value="Duplicate">Duplicate</label> 
+			<label><input id="triplicateInv" type="radio" name="invoiceVersion" value="Triplicate">Triplicate</label> 
+		</div>
+		<div class="radio">
+			Transport Mode : <input id="transportMode" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Vehicle Number: <input id="vehicleNo" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Date of Supply: <input id="dtOfSupply" class="form-control" style="display: inline; width: 400px" type="date">
+		</div>
+	</div>
+</div>
+
+<div class="clear-fix"></div>
+
+<div class="container">
+	<div class="sub-container float-left buyer-container" style="width: 53%;">
+		<div class="page-header">
+			<h2>Buyer</h2>   
+		</div>
+		<div class="radio">
+			Name: <input id="buyerName" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Billing Address: <input id="buyerBillAddr" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			State:
+			<select id="buyerState" class="form-control" style="display: inline; width: 300px">
+				<option value=""></option>
+				<option value="35">Andaman and Nicobar Islands</option>
+				<option value="28">Andhra Pradesh</option>
+				<option value="12">Arunachal Pradesh</option>
+				<option value="18">Assam</option>
+				<option value="10">Bihar</option>
+				<option value="04">Chandigarh</option>
+				<option value="22">Chattisgarh</option>
+				<option value="26">Dadra and Nagar Haveli</option>
+				<option value="25">Daman and Diu</option>
+				<option value="07">Delhi</option>
+				<option value="30">Goa</option>
+				<option value="24">Gujarat</option>
+				<option value="06">Haryana</option>
+				<option value="02">Himachal Pradesh</option>
+				<option value="01">Jammu and Kashmir</option>
+				<option value="20">Jharkhand</option>
+				<option value="29">Karnataka</option>
+				<option value="32">Kerala</option>
+				<option value="31">Lakshadweep Islands</option>
+				<option value="23">Madhya Pradesh</option>
+				<option value="27">Maharashtra</option>
+				<option value="14">Manipur</option>
+				<option value="17">Meghalaya</option>
+				<option value="15">Mizoram</option>
+				<option value="13">Nagaland</option>
+				<option value="21">Odisha</option>
+				<option value="34">Pondicherry</option>
+				<option value="03">Punjab</option>
+				<option value="08">Rajasthan</option>
+				<option value="11">Sikkim</option>
+				<option value="33">Tamil Nadu</option>
+				<option value="36">Telangana</option>
+				<option value="16">Tripura</option>
+				<option value="09">Uttar Pradesh</option>
+				<option value="05">Uttarakhand</option>
+				<option value="19">West Bengal</option>
+			</select>
+		</div>
+		<div class="radio">
+			GSTIN/Unique ID: <input id="buyerGstIn" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+	</div>
+	<div class="sub-container float-left ship-container">
+		<div class="page-header">
+			<h2>Shipped to</h2>   
+		</div>
+		<div class="radio">
+			Name: <input id="shipName" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			Delivery Address: <input id="shipDelAddr" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+		<div class="radio">
+			State: 
+			<select id="shipState" class="form-control" style="display: inline; width: 300px">
+				<option value=""></option>
+				<option value="35">Andaman and Nicobar Islands</option>
+				<option value="28">Andhra Pradesh</option>
+				<option value="12">Arunachal Pradesh</option>
+				<option value="18">Assam</option>
+				<option value="10">Bihar</option>
+				<option value="04">Chandigarh</option>
+				<option value="22">Chattisgarh</option>
+				<option value="26">Dadra and Nagar Haveli</option>
+				<option value="25">Daman and Diu</option>
+				<option value="07">Delhi</option>
+				<option value="30">Goa</option>
+				<option value="24">Gujarat</option>
+				<option value="06">Haryana</option>
+				<option value="02">Himachal Pradesh</option>
+				<option value="01">Jammu and Kashmir</option>
+				<option value="20">Jharkhand</option>
+				<option value="29">Karnataka</option>
+				<option value="32">Kerala</option>
+				<option value="31">Lakshadweep Islands</option>
+				<option value="23">Madhya Pradesh</option>
+				<option value="27">Maharashtra</option>
+				<option value="14">Manipur</option>
+				<option value="17">Meghalaya</option>
+				<option value="15">Mizoram</option>
+				<option value="13">Nagaland</option>
+				<option value="21">Odisha</option>
+				<option value="34">Pondicherry</option>
+				<option value="03">Punjab</option>
+				<option value="08">Rajasthan</option>
+				<option value="11">Sikkim</option>
+				<option value="33">Tamil Nadu</option>
+				<option value="36">Telangana</option>
+				<option value="16">Tripura</option>
+				<option value="09">Uttar Pradesh</option>
+				<option value="05">Uttarakhand</option>
+				<option value="19">West Bengal</option>
+			</select>
+		</div>
+		<div class="radio">
+			GSTIN/Unique ID: <input id="shipGstIn" class="form-control" style="display: inline; width: 400px" type="text">
+		</div>
+	</div>
+</div>
+
+<div class="clear-fix"></div>
+
+<div class="container">
+	<div class="bill-items-wrapper">
+		<table class="bill-items table table-striped">
+			<thead>
+				<tr>
+					<th>Sr No.</th>
+					<th>Item details</th>
+					<th>Tax Rates</th>
+					<th>TOTAL</th>
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<h5 class="record-number">1</h5>
+						<div class="margin-top-220">
+							<button class="btn btn-default clear-record">Clear</button>
+						</div>
+						<div>
+							<button class="btn btn-default remove-record">Remove</button>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div>
+								Description: <input class="form-control itemName" style="display: inline; width: 600px" type="text">
+							</div>
+							<div>
+								HSN/SAC: <input class="form-control hsn" type="text" style="width:125px">
+							</div>
+							<div class="col-sm-4">
+								QTY: <input value="0" class="form-control price-calc qty" type="text" style="width:90px">
+							</div>
+							<div class="col-sm-4">
+								UOM: <input class="form-control uoms uom" type="text" style="width:90px">
+								<!--<select id="uom1" class="form-control uoms" style="width:120px">
+									<option value=""></option>
+									<option value="Nos">Nos</option>
+									<option value="Metres">Metres</option>
+									<option value="Pieces">Pieces</option>
+									<option value="Kg">Kg</option>
+								</select>-->
+							</div>
+							<div class="col-sm-4">
+								RATE: <input value="0" class="form-control price-calc rate" type="text" style="width:90px">
+							</div>
+							<div class="col-sm-4">
+								AMOUNT: <input value="0" class="form-control amount" type="text" style="width:130px" disabled>
+							</div>
+							<div class="col-sm-4">
+								Less DISCOUNT%: <input value="0" class="form-control price-calc discount" type="text" style="width:90px">
+							</div>
+							<div class="col-sm-4">
+								Taxable Value: <input value="0" class="form-control taxableValue" type="text" style="width:130px" disabled>
+							</div>
+						</div>
+					
+					</td>
+					<td>
+						
+						<div>
+							CGST:
+							<div>
+								Rate %: <select class="form-control price-calc cgstRate" disabled style="display: inline;width:87px">
+											<option value="0">0</option>
+											<option value="0.125">0.125</option>
+											<option value="1.5">1.5</option>
+											<option value="6">6</option>
+											<option value="9">9</option>
+											<option value="14">14</option>
+											<option value="18">18</option>
+										</select>
+							</div>
+							<div>
+								Amount: <input value="0" class="form-control cgstAmt" type="text" style="display: inline;width:130px" disabled>
+							</div>
+						</div>
+						
+						<div>
+							SGST:
+							<div>
+								Rate %: <select class="form-control price-calc sgstRate" disabled style="display: inline;width:87px">
+									<option value="0">0</option>
+									<option value="0.125">0.125</option>
+									<option value="1.5">1.5</option>
+									<option value="6">6</option>
+									<option value="9">9</option>
+									<option value="14">14</option>
+									<option value="18">18</option>
+								</select>
+							</div>
+							<div>
+								Amount: <input value="0" class="form-control sgstAmt" type="text" style="display: inline;width:130px" disabled>
+							</div>
+						</div>
+						<div>
+							IGST: 
+							<div>
+								Rate %: <select class="form-control price-calc igstRate" style="display: inline;width:87px">
+									<option value="0">0</option>
+									<option value="0.125">0.125</option>
+									<option value="1.5">1.5</option>
+									<option value="6">6</option>
+									<option value="9">9</option>
+									<option value="14">14</option>
+									<option value="18">18</option>
+								</select>
+							</div>
+							<div>
+								Amount: <input value="0" class="form-control igstAmt" type="text" style="display: inline;width:130px" disabled>
+							</div>
+						</div>
+					</td>
+					
+					<td><input value="0" class="form-control total" type="text" style="width:130px" disabled></td>
+				</tr>
+			</tbody>
+		</table>
+		<button class="btn btn-primary" id="addRecord">+</button>
+		<div class="radio">
+			<p> Amount in Words: <span id="amtInWords">Zero Only</span></p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	
+	<div class="sub-container float-left">
+		<div class="page-header">
+			<h2>Source</h2>   
+		</div>
+		<div class="radio">
+			<label><input id="radio-blank" type="radio" name="source" checked>Blank Workbook</label>
+		</div>
+		<div class="radio">
+			<label><input id="radio-local" type="radio" name="source">Existing Local Workbook:</label> <input id="file-input" type="file" style="display: inline" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+		</div>
+
+		<button class="btn btn-primary" onclick="generateBlob()">Get invoice</button>
+		<button class="btn btn-primary" onclick="generateBase64()">Generate base64</button>
+	</div>
+
+	<div class="sub-container float-right">
+		<input type="hidden" id="totalAmtHidden"/>
+		<input type="hidden" id="totalDiscountHidden"/>
+		<div class="radio">
+			Total amount before tax: <input id="totalAmtBeforeTax" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+		<div class="radio">
+			Add CGST: <input id="cgstTotal" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+		<div class="radio">
+			Add SGST: <input id="sgstTotal" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+		<div class="radio">
+			Add IGST: <input id="igstTotal" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+		<div class="radio">
+			Tax Amount:GST: <input id="gstTotal" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+		<div class="radio">
+			Total amount after tax (Round off): <input id="totalAmtAfterTax" value="0" class="form-control" style="display: inline; width: 130px" type="text" disabled>
+		</div>
+	</div>
+</div>
+
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/autocompletes.js"></script>
+<script type="text/javascript" src="js/xlsx-populate.js"></script>
+
+<script type="text/javascript" src="js/generateExcel.js"></script>
+	
+<script src="js/itemTableFuncns.js"></script>
+
+</body>
+</html>

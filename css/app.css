@@ -1,0 +1,31 @@
+.bill-items-wrapper{
+	margin-top: 6%;
+	overflow-x: scroll;
+}
+.bill-items tr th{
+	text-align: center;
+}
+.bill-items tr td:first-child{
+	padding: 15px;
+	text-align: center;
+}
+.buyer-container input,
+.buyer-container select,
+.buyer-container option,
+.ship-container input,
+.ship-container select,
+.ship-container option{
+	font-weight: bold;
+}
+.clear-fix{
+	clear: both;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.margin-top-220{
+	margin-top: 220px;
+}
