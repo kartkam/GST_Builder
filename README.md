@@ -1,5 +1,7 @@
-# GST Builder
+#Tax utilities
+Software for tax related actions
 
+## GST Builder
 Create GST invoices from user interface forms. 
 The invoice generated is an excel sheet which calculates total cost of all the items entered along with the GST tax calculations.
 
